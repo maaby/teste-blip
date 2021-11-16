@@ -1,1 +1,24 @@
-Teste blip
+Para rodar os testes: 
+
+npm install
+
+npx cypress run (formato rundless)
+npx cypress( formato cypress IDE)
+
+Cenarios automatizados : 
+
+Validar esqueceu sua senha 
+
+Dado que acesso o site do blip
+Quando clico na opção “esqueceu sua senha?”
+Então informo um email para envio do link de criação da nova senha 
+
+
+Cadastro sem informar  campo obrigatório
+
+Dado que acesso site do blip
+E clico em “cadastre se grátis”
+Quando preencho o formulário de cadastro
+E limpo o campo telefone
+E aceito termos de serviço
+Então botão “Cadastre-se grátis” não deve ser habilitado
