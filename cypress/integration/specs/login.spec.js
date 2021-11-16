@@ -7,13 +7,13 @@ describe('Login', () => {
     cy.visit('/login');
   });
 
-  it('Login com usuario inválido', () => {
-    LoginAction.UI.login('teste@teste.com.br','123456');
-    cy.get('.bottom-left > .hydrated').contains('Login e/ou senha inválidos');
+  it('Validar esqueceu sua senha', () => {
+    LoginAction.UI.esqueceuSuaSenha();
+    cy.get('.bp-fw-bold').contains('Esqueceu sua senha?')
   });
 
-  it('Login com usuario sem ativar conta', () => {
-    LoginAction.UI.login('maabymandira@gmail.coma','julia0410@');
-    cy.get('.bottom-left > .hydrated').contains('Ops! Você ainda não ativou sua conta.');
+  it('Cadastrar sem informar campo Obrigatório', () => {
+    LoginAction.UI.cadastrarUsuario();
+    cy.get('#submitButton').should('be.disabled');
   });
 });
